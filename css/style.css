@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: auto;
+}
+:root{
+    --primary-color:#0e22ff;
+    --secondary-color:#00d5ff;
+    --text-color:#ffffff;
+    --filter:#007bffa9;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: var(--filter);
+}
+.animation{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden ;
+}
+.animation .cercle{
+    position: absolute;
+    top: 20%;
+    left:0%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 3px dashed var(--primary-color);
+}
+
+.cercle .rectangle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    animation: rotate 3s linear infinite;
+    transform: translate(-50% -50%);
+    transform-origin: left;
+    width: 60%;
+    height: auto;
+    justify-content: flex-end;
+    /* border:  2px solid red; */
+}
+.rectangle h2{
+ transform: rotate(90deg);
+color: #ffffff;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.nav{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--filter);
+    backdrop-filter: blur(10px);
+}
+.navbar{
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.nav-link{
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+}
+.logo h2{
+    font-size: 60px;
+    -webkit-text-stroke: var(--text-color) 3px;
+    font-weight: 900;
+    color: transparent;
+}
+.logo{
+    padding: 1%;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+}
+.logo::after{
+    content: '';
+    background: var(--primary-color);
+    backdrop-filter: blur(100px);
+    position: absolute;
+    top: 0%;
+    height: 0%;
+    width: 100%;
+    height: 100%;
+    animation: typing 50s linear infinite;
+}
+@keyframes typing{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
